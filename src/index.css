@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-navy font-sans text-white antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-gold text-navy-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.gold.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .page-x {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-gold;
+  }
+
+  .section-title {
+    @apply font-serif text-[2.6rem] leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl;
+  }
+
+  .rule {
+    @apply border-t border-white/15;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-cream text-navy-ink hover:bg-gold;
+  }
+
+  .btn-ghost {
+    @apply btn border border-white/35 text-white hover:border-white hover:bg-white/10;
+  }
+
+  .text-link {
+    @apply inline-flex items-center gap-1.5 font-semibold text-white underline decoration-white/30 underline-offset-[6px] transition-colors hover:decoration-gold;
+  }
+
+  .chip {
+    @apply inline-block rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-white/85;
+  }
+}

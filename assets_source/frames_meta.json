@@ -1,0 +1,6 @@
+{
+  "totalFrames": 64,
+  "bgHex": "#b0120f",
+  "framePattern": "frames/frame_{i}.webp",
+  "centerFrame": "frames/center.webp"
+}
